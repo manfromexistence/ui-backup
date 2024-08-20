@@ -52,7 +52,7 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "components.json",
+          title: "ui.json",
           href: "/docs/components-json",
           items: [],
         },
@@ -84,6 +84,76 @@ export const docsConfig: DocsConfig = {
         {
           title: "Changelog",
           href: "/docs/changelog",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "manfromexistence",
+      items: [
+        {
+          title: "Introduction",
+          href: "/docs",
+          items: [],
+        },
+        {
+          title: "Two-Step Popover",
+          href: "/docs/two-step-popover",
+          items: [],
+        },
+        {
+          title: "Action Toolbar",
+          href: "/docs/action-toolbar",
+          items: [],
+        },
+        {
+          title: "Dynamic Settings",
+          href: "/docs/dynamic-settings",
+          items: [],
+        },
+        {
+          title: "Contextual Toolbar",
+          href: "/docs/contextual-toolbar",
+          items: [],
+        },
+        {
+          title: "Beta Feedback",
+          href: "/docs/beta-feedback",
+          items: [],
+        },
+        {
+          title: "Calendar Widget",
+          href: "/docs/calendar-widget",
+          items: [],
+        },
+        {
+          title: "Flexbile Tags Container",
+          href: "/docs/flexbile-tags-container",
+          items: [],
+        },
+        {
+          title: "Elastic Card",
+          href: "/docs/elastic-card",
+          items: [],
+        },
+        {
+          title: "Parameters iOS Slider",
+          href: "/docs/parameters-ios-slider",
+          items: [],
+        },
+        {
+          title: "Dynamic Header Dropdown",
+          href: "/docs/dynamic-header-dropdown",
+          items: [],
+        },
+        {
+          title: "Dynamic Footer Widget",
+          href: "/docs/dynamic-footer-widget",
+          items: [],
+        },
+        {
+          title: "Friday",
+          href: "/docs/friday",
           items: [],
         },
       ],

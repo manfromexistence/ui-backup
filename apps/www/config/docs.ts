@@ -8,33 +8,53 @@ export interface DocsConfig {
 
 export const docsConfig: DocsConfig = {
   mainNav: [
-    {
-      title: "Documentation",
-      href: "/docs",
-    },
+    // {
+    //   title: "Documentation",
+    //   href: "/docs",
+    // },
     // {
     //   title: "Components",
     //   href: "/docs/components/accordion",
     // },
-    {
-      title: "Blocks",
-      href: "/blocks",
-    },
-    {
-      title: "Charts",
-      href: "/charts",
-    },
-    {
-      title: "Themes",
-      href: "/themes",
-    },
+    // {
+    //   title: "Blocks",
+    //   href: "/blocks",
+    // },
+    // {
+    //   title: "Charts",
+    //   href: "/charts",
+    // },
+    // {
+    //   title: "Themes",
+    //   href: "/themes",
+    // },
     // {
     //   title: "Examples",
     //   href: "/examples",
     // },
+    // {
+    //   title: "Colors",
+    //   href: "/colors",
+    // },
     {
-      title: "Colors",
-      href: "/colors",
+      title: "Components",
+      href: "/docs/components",
+    },
+    {
+      title: "Apprearence",
+      href: "/apprearence",
+    },
+    {
+      title: "Playground",
+      href: "/playground",
+    },
+    {
+      title: "Inspirations...",
+      href: "/inspirations...",
+    },
+    {
+      title: "Examples",
+      href: "/examples",
     },
   ],
   sidebarNav: [
@@ -53,17 +73,22 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "ui.json",
-          href: "/docs/components-json",
+          href: "/docs/ui-json",
+          items: [],
+        },
+        // {
+        //   title: "Theming",
+        //   href: "/docs/theming",
+        //   items: [],
+        // },
+        {
+          title: "Mode",
+          href: "/docs/mode",
           items: [],
         },
         {
-          title: "Theming",
-          href: "/docs/theming",
-          items: [],
-        },
-        {
-          title: "Dark mode",
-          href: "/docs/dark-mode",
+          title: "Package",
+          href: "/docs/package",
           items: [],
         },
         {
@@ -71,16 +96,16 @@ export const docsConfig: DocsConfig = {
           href: "/docs/cli",
           items: [],
         },
-        {
-          title: "Typography",
-          href: "/docs/components/typography",
-          items: [],
-        },
-        {
-          title: "Figma",
-          href: "/docs/figma",
-          items: [],
-        },
+        // {
+        //   title: "Typography",
+        //   href: "/docs/components/typography",
+        //   items: [],
+        // },
+        // {
+        //   title: "Figma",
+        //   href: "/docs/figma",
+        //   items: [],
+        // },
         {
           title: "Changelog",
           href: "/docs/changelog",

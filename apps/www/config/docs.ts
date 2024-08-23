@@ -12,10 +12,10 @@ export const docsConfig: DocsConfig = {
       title: "Documentation",
       href: "/docs",
     },
-    {
-      title: "Components",
-      href: "/docs/components/accordion",
-    },
+    // {
+    //   title: "Components",
+    //   href: "/docs/components/accordion",
+    // },
     {
       title: "Blocks",
       href: "/blocks",
@@ -28,10 +28,10 @@ export const docsConfig: DocsConfig = {
       title: "Themes",
       href: "/themes",
     },
-    {
-      title: "Examples",
-      href: "/examples",
-    },
+    // {
+    //   title: "Examples",
+    //   href: "/examples",
+    // },
     {
       title: "Colors",
       href: "/colors",

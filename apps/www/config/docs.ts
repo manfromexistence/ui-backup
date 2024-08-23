@@ -45,8 +45,8 @@ export const docsConfig: DocsConfig = {
       href: "/apprearence",
     },
     {
-      title: "Blokcs...",
-      href: "/blocs...",
+      title: "Blokcs",
+      href: "/blocs",
     },
     {
       title: "Playgrounds",
@@ -114,7 +114,7 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "manfromexistence",
+      title: "ManFromExistence",
       items: [
         {
           title: "Introduction",

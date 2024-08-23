@@ -9,11 +9,10 @@
     "url": "https://twitter.com/shadcn"
   },
   "workspaces": [
-    "apps/*",
-    "packages/*",
-    "templates/*"
+    "apps/*"
   ],
   "scripts": {
+    "ui": "pnpm install && cd apps/www && pnpm run dev",
     "build": "turbo run build",
     "build:cli": "turbo --filter=shadcn-ui build",
     "build:registry": "pnpm --filter=www build:registry && pnpm format:write",

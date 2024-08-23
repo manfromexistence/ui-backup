@@ -41,16 +41,16 @@ export const docsConfig: DocsConfig = {
       href: "/docs/components",
     },
     {
-      title: "Apprearence",
+      title: "Apprearences",
       href: "/apprearence",
     },
     {
-      title: "Playground",
-      href: "/playground",
+      title: "Blokcs...",
+      href: "/blocs...",
     },
     {
-      title: "Inspirations...",
-      href: "/inspirations...",
+      title: "Playgrounds",
+      href: "/playground",
     },
     {
       title: "Examples",

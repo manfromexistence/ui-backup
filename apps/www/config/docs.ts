@@ -122,14 +122,10 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    
     {
-      title: "ManFromExistence",
+      title: "Manfromexistence",
       items: [
-        {
-          title: "Introduction",
-          href: "/docs",
-          items: [],
-        },
         {
           title: "Two-Step Popover",
           href: "/docs/two-step-popover",
@@ -443,6 +439,7 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+
   ],
   chartsNav: [
     {

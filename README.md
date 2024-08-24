@@ -16,6 +16,165 @@ Please read the [contributing guide](/CONTRIBUTING.md).
 
 Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
 
+```
+"use client"
+
+// Accordiono
+import * as React from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import { ArrowBigDownDash } from "lucide-react"
+import { SidebarNavItem } from "types/nav"
+
+import { type DocsConfig } from "@/config/docs"
+import { cn } from "@/lib/utils"
+
+const Accordion = AccordionPrimitive.Root
+
+const AccordionItem = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
+>(({ className, ...props }, ref) => (
+  <AccordionPrimitive.Item
+    ref={ref}
+    className={cn("border-b", className)}
+    {...props}
+  />
+))
+AccordionItem.displayName = "AccordionItem"
+
+const AccordionTrigger = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Trigger
+      ref={ref}
+      className={cn(
+        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <ArrowBigDownDash className="h-4 w-4 shrink-0 transition-transform duration-200" />
+    </AccordionPrimitive.Trigger>
+  </AccordionPrimitive.Header>
+))
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
+
+const AccordionContent = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Content
+    ref={ref}
+    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    {...props}
+  >
+    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+  </AccordionPrimitive.Content>
+))
+
+AccordionContent.displayName = AccordionPrimitive.Content.displayName
+
+// export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+
+export interface DocsSidebarNavProps {
+  config: DocsConfig
+}
+
+export function DocsSidebarNav({ config }: DocsSidebarNavProps) {
+  const pathname = usePathname()
+
+  const items = pathname?.startsWith("/charts")
+    ? config.chartsNav
+    : config.sidebarNav
+
+  return items.length ? (
+    <div className="w-full">
+      {items.map((item, index) => (
+        <div key={index} className={cn("")}>
+          {/* <Accordion type="multiple" className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                <h4 className="text-sm font-semibold">
+                  {item.title}
+                </h4>
+              </AccordionTrigger>
+              <AccordionContent>
+                {item?.items?.length && (
+                  <DocsSidebarNavItems items={item.items} pathname={pathname} />
+                )}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion> */}
+          <h4 className="ml-2 text-sm font-semibold">{item.title}</h4>
+          {item?.items?.length && (
+            <DocsSidebarNavItems items={item.items} pathname={pathname} />
+          )}
+        </div>
+      ))}
+    </div>
+  ) : null
+}
+
+interface DocsSidebarNavItemsProps {
+  items: SidebarNavItem[]
+  pathname: string | null
+}
+
+export function DocsSidebarNavItems({
+  items,
+  pathname,
+}: DocsSidebarNavItemsProps) {
+  return items?.length ? (
+    <div className="grid grid-flow-row auto-rows-max text-sm">
+      {items.map((item, index) =>
+        item.href && !item.disabled ? (
+          <Link
+            key={index}
+            href={item.href}
+            className={cn(
+              "group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline",
+              item.disabled && "cursor-not-allowed opacity-60",
+              pathname === item.href
+                ? "font-medium text-foreground"
+                : "text-muted-foreground"
+            )}
+            target={item.external ? "_blank" : ""}
+            rel={item.external ? "noreferrer" : ""}
+          >
+            {item.title}
+            {item.label && (
+              <span className="ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
+                {item.label}
+              </span>
+            )}
+          </Link>
+        ) : (
+          <span
+            key={index}
+            className={cn(
+              "flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground hover:underline",
+              item.disabled && "cursor-not-allowed opacity-60"
+            )}
+          >
+            {item.title}
+            {item.label && (
+              <span className="ml-2 rounded-md bg-muted px-1.5 py-0.5 text-xs leading-none text-muted-foreground no-underline group-hover:no-underline">
+                {item.label}
+              </span>
+            )}
+          </span>
+        )
+      )}
+    </div>
+  ) : null
+}
+
+```
 # Shadcn More UI
 <p align="center">
   <br>

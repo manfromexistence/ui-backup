@@ -56,7 +56,7 @@ One of the most requested features since launch has been layouts: admin dashboar
   <span class="sr-only">View the blocks library</span>
 </a>
 
-Blocks are ready-made components that you can use to build your apps. They are fully responsive, accessible, and composable, meaning they are built using the same principles as the rest of the components in shadcn/ui.
+Blocks are ready-made components that you can use to build your apps. They are fully responsive, accessible, and composable, meaning they are built using the same principles as the rest of the components in manfromexistence/ui.
 
 We're starting with dashboard layouts and authentication pages, with plans to add more blocks in the coming weeks.
 
@@ -134,7 +134,7 @@ We've added a new Breadcrumb component and an Input OTP component.
 
 ### Breadcrumb
 
-An accessible and flexible breadcrumb component. It has support for collapsed items, custom separators, bring-your-own routing `<Link />` and composable with other shadcn/ui components.
+An accessible and flexible breadcrumb component. It has support for collapsed items, custom separators, bring-your-own routing `<Link />` and composable with other manfromexistence/ui components.
 
 <ComponentPreview name="breadcrumb-demo" />
 
@@ -152,7 +152,7 @@ If you have a [v0](https://v0.dev), the new components are available for generat
 
 ## December 2023 - New components, CLI and more
 
-We've added new components to shadcn/ui and made a lot of improvements to the CLI.
+We've added new components to manfromexistence/ui and made a lot of improvements to the CLI.
 
 Here's a quick overview of what's new:
 
@@ -195,7 +195,7 @@ Build resizable panel groups and layouts with this `<Resizable />` component.
 
 ### Sonner
 
-Another one by [emilkowalski\_](https://twitter.com/emilkowalski_). The last toast component you'll ever need. Sonner is now availabe in shadcn/ui.
+Another one by [emilkowalski\_](https://twitter.com/emilkowalski_). The last toast component you'll ever need. Sonner is now availabe in manfromexistence/ui.
 
 <ComponentPreview name="sonner-demo" />
 
@@ -203,7 +203,7 @@ Another one by [emilkowalski\_](https://twitter.com/emilkowalski_). The last toa
 
 This has been one of the most requested features. You can now configure a custom Tailwind prefix and the cli will automatically prefix your utility classes when adding components.
 
-This means you can now easily add shadcn/ui components to existing projects like Docusaurus, Nextra...etc. A drop-in for your existing design system with no conflict. 🔥
+This means you can now easily add manfromexistence/ui components to existing projects like Docusaurus, Nextra...etc. A drop-in for your existing design system with no conflict. 🔥
 
 ```tsx /tw-/
 <AlertDialog className="tw-grid tw-gap-4 tw-border tw-bg-background tw-shadow-lg" />
@@ -279,7 +279,7 @@ I've been working on a new CLI for the past few weeks. It's a complete rewrite. 
 ### `init`
 
 ```bash
-npx shadcn-ui@latest init
+npx better-ui@latest init
 ```
 
 When you run the `init` command, you will be asked a few questions to configure `components.json`:
@@ -321,7 +321,7 @@ This means you can now use the CLI with any directory structure including `src` 
 ### `add`
 
 ```bash
-npx shadcn-ui@latest add
+npx better-ui@latest add
 ```
 
 The `add` command is now much more capable. You can now add UI components but also import more complex components (coming soon).
@@ -331,7 +331,7 @@ The CLI will automatically resolve all components and dependencies, format them 
 ### `diff` (experimental)
 
 ```bash
-npx shadcn-ui diff
+npx better-ui diff
 ```
 
 We're also introducing a new `diff` command to help you keep track of upstream updates.
@@ -341,7 +341,7 @@ You can use this command to see what has changed in the upstream repository and 
 Run the `diff` command to get a list of components that have updates available:
 
 ```bash
-npx shadcn-ui diff
+npx better-ui diff
 ```
 
 ```txt
@@ -356,7 +356,7 @@ The following components have updates available:
 Then run `diff [component]` to see the changes:
 
 ```bash
-npx shadcn-ui diff alert
+npx better-ui diff alert
 ```
 
 ```diff /pl-12/

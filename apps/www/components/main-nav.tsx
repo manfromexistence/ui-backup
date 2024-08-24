@@ -41,6 +41,28 @@ export function MainNav() {
           Components
         </Link>
         <Link
+          href="/apprearences"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/apprearences")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Apprearences
+        </Link>
+        <Link
+          href="/playgrounds"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/playgrounds")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Playgrounds
+        </Link>
+        <Link
           href="/blocks"
           className={cn(
             "transition-colors hover:text-foreground/80",
@@ -51,7 +73,7 @@ export function MainNav() {
         >
           Blocks
         </Link>
-        <Link
+        {/* <Link
           href="/charts"
           className={cn(
             "transition-colors hover:text-foreground/80",
@@ -95,6 +117,30 @@ export function MainNav() {
           )}
         >
           Colors
+        </Link> */}
+
+        <Link
+          href="/templates"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/templates")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Templates
+        </Link>
+
+        <Link
+          href="/examples"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/examples")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Examples
         </Link>
       </nav>
     </div>

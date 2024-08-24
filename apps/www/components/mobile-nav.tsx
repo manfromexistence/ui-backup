@@ -64,8 +64,9 @@ export function MobileNav() {
           <Icons.logo className="mr-2 h-4 w-4" />
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
-        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          <div className="flex flex-col space-y-3">
+        {/* h-[calc(100vh-8rem)] */}
+        <ScrollArea className="my-4 h-full pb-10">
+          <div className="mr-6 flex flex-col space-y-3 rounded-md border px-5 py-3">
             {docsConfig.mainNav?.map(
               (item) =>
                 item.href && (
@@ -79,7 +80,7 @@ export function MobileNav() {
                 )
             )}
           </div>
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2 pl-2">
             {docsConfig.sidebarNav.map((item, index) => (
               <div key={index} className="flex flex-col space-y-3 pt-6">
                 <h4 className="font-medium">{item.title}</h4>

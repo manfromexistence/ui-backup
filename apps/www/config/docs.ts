@@ -37,6 +37,10 @@ export const docsConfig: DocsConfig = {
     //   href: "/colors",
     // },
     {
+      title: "Documentation",
+      href: "/docs",
+    },
+    {
       title: "Components",
       href: "/docs/components",
     },
@@ -45,12 +49,17 @@ export const docsConfig: DocsConfig = {
       href: "/apprearence",
     },
     {
+      title: "Playgrounds",
+      href: "/playgrounds",
+    },
+    {
       title: "Blokcs",
       href: "/blocs",
     },
+
     {
-      title: "Playgrounds",
-      href: "/playground",
+      title: "Templates",
+      href: "/templates",
     },
     {
       title: "Examples",
@@ -184,7 +193,7 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Components",
+      title: "Shadcnui",
       items: [
         {
           title: "Accordion",

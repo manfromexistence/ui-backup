@@ -16,7 +16,7 @@ import MailPage from "@/app/(app)/examples/mail/page"
 export default function IndexPage() {
   return (
     <div className="container relative">
-      <PageHeader>
+      {/* <PageHeader>
         <Announcement />
         <PageHeaderHeading>Build your component library</PageHeaderHeading>
         <PageHeaderDescription>
@@ -59,7 +59,7 @@ export default function IndexPage() {
         <div className="overflow-hidden rounded-lg border bg-background shadow">
           <MailPage />
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

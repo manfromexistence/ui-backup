@@ -13,6 +13,12 @@
 // import MailPage from "@/app/(app)/examples/mail/page"
 import { CircleCheck, HardDrive, MessageCircleCode } from "lucide-react"
 
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
+
 export default function IndexPage() {
   return (
     <div className="container relative">
@@ -22,12 +28,70 @@ export default function IndexPage() {
         feeling of the transition. Not quite there yet but hey, all of this is
         experimental.
       </span>
-      <div className="flex h-[750px] w-full items-center justify-center rounded-md border">
-        <span className="flex h-10 w-10 items-center justify-center rounded-md bg-background">
-          <HardDrive className="h-4 w-4 text-muted hover:text-background" />
-          <MessageCircleCode />
-          <CircleCheck />
-        </span>
+      <div className="mt-4 flex h-[500px] w-full items-center justify-center rounded-md border">
+        <Popover>
+          <PopoverTrigger asChild>
+            <span className="flex h-10 w-10 items-center justify-center rounded-md bg-primary-foreground">
+              <HardDrive className="h-4 w-4 text-muted-foreground hover:text-primary" />
+              {/* <MessageCircleCode />
+          <CircleCheck /> */}
+            </span>
+          </PopoverTrigger>
+          <PopoverContent className="flex w-auto space-x-2 border-none p-2">
+
+            <div className="w-72 rounded-md border p-2">
+              <div className="flex items-center rounded-md p-2 text-muted-foreground  hover:bg-secondary hover:text-primary">
+                <div className="flex flex-1 items-center space-x-2">
+                  <MessageCircleCode className="h-4 w-4" />
+                  <span className="text-sm text-primary ">Add Comment</span>
+                </div>
+                <span className="flex items-center text-xs text-muted-foreground">
+                  Reply Thread
+                </span>
+              </div>
+
+              <div className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-primary">
+                <div className="flex flex-1 items-center space-x-2">
+                  <CircleCheck className="h-4 w-4" />
+                  <span className="text-sm text-primary">Approve Changes</span>
+                </div>
+                <span className="flex items-center text-xs text-muted-foreground">
+                  Send Review
+                </span>
+              </div>
+            </div>
+            <div className="w-72 rounded-md border p-2">
+              <div className="flex items-center rounded-md p-2 text-muted-foreground  hover:bg-secondary hover:text-primary">
+                <div className="flex flex-1 items-center space-x-2">
+                  <MessageCircleCode className="h-4 w-4" />
+                  <span className="text-sm text-primary ">Add Comment</span>
+                </div>
+                <span className="flex items-center text-xs text-muted-foreground">
+                  Reply Thread
+                </span>
+              </div>
+              <div className="flex items-center rounded-md p-2 text-muted-foreground  hover:bg-secondary hover:text-primary">
+                <div className="flex flex-1 items-center space-x-2">
+                  <MessageCircleCode className="h-4 w-4" />
+                  <span className="text-sm text-primary ">Add Comment</span>
+                </div>
+                <span className="flex items-center text-xs text-muted-foreground">
+                  Reply Thread
+                </span>
+              </div>
+              <div className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-primary">
+                <div className="flex flex-1 items-center space-x-2">
+                  <CircleCheck className="h-4 w-4" />
+                  <span className="text-sm text-primary">Approve Changes</span>
+                </div>
+                <span className="flex items-center text-xs text-muted-foreground">
+                  Send Review
+                </span>
+              </div>
+            </div>
+
+          </PopoverContent>
+        </Popover>
       </div>
       {/* <PageHeader>
         <Announcement />

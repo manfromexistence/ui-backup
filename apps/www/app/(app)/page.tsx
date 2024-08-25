@@ -1,18 +1,17 @@
-import Image from "next/image"
-import Link from "next/link"
+// import Image from "next/image"
+// import Link from "next/link"
+// import { siteConfig } from "@/config/site"
+// import { Announcement } from "@/components/announcement"
+// import { ExamplesNav } from "@/components/examples-nav"
+// import {
+//   PageActions,
+//   PageHeader,
+//   PageHeaderDescription,
+//   PageHeaderHeading,
+// } from "@/components/page-header"
+// import { Button } from "@/registry/new-york/ui/button"
+// import MailPage from "@/app/(app)/examples/mail/page"
 import { CircleCheck, HardDrive, MessageCircleCode } from "lucide-react"
-
-import { siteConfig } from "@/config/site"
-import { Announcement } from "@/components/announcement"
-import { ExamplesNav } from "@/components/examples-nav"
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header"
-import { Button } from "@/registry/new-york/ui/button"
-import MailPage from "@/app/(app)/examples/mail/page"
 
 export default function IndexPage() {
   return (

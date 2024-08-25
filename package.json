@@ -12,7 +12,7 @@
     "apps/*"
   ],
   "scripts": {
-    "ui": "pnpm install && cd apps/www && pnpm run dev",
+    "ui": "cd apps/www && npm run dev",
     "build": "turbo run build",
     "build:cli": "turbo --filter=shadcn-ui build",
     "build:registry": "pnpm --filter=www build:registry && pnpm format:write",

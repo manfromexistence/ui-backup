@@ -12,8 +12,11 @@
 // import { Button } from "@/registry/new-york/ui/button"
 // import MailPage from "@/app/(app)/examples/mail/page"
 "use client"
+
+import { useState } from "react"
 import { CircleCheck, HardDrive, MessageCircleCode } from "lucide-react"
 
+import { cn } from "@/lib/utils"
 import { Button } from "@/registry/default/ui/button"
 import {
   Popover,
@@ -21,11 +24,10 @@ import {
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
 import { Textarea } from "@/registry/default/ui/textarea"
-import { useState } from "react";
 
 export default function IndexPage() {
-
-  const [TWOSTEPPOPOVER, setTWOSTEPPOPOVER] = useState(0);
+  const [TWO_POPOVER_MARGIN_LEFT, setTWO_POPOVER_MARGIN_LEFT] = useState(0)
+  const [TWO_POPOVER_DISPLAY, setTWO_POPOVER_DISPLAY] = useState(false)
 
   return (
     <div className="container relative">
@@ -44,9 +46,20 @@ export default function IndexPage() {
           <CircleCheck /> */}
             </span>
           </PopoverTrigger>
-          <PopoverContent className="flex w-[250px] space-x-2 overflow-x-auto overflow-y-hidden border-none bg-primary-foreground p-0">
-            <div className="min-w-[250px] rounded-md border p-2">
-              <div className="flex items-center rounded-md p-2 text-muted-foreground  hover:bg-secondary hover:text-primary">
+          <PopoverContent className="flex max-h-min w-[250px] space-x-2 overflow-hidden border-none bg-primary-foreground p-0">
+            <div
+              style={{
+                marginLeft: `-${TWO_POPOVER_MARGIN_LEFT}px`,
+              }}
+              className="w-[250px] rounded-md border p-2"
+            >
+              <div
+                onClick={() => {
+                  setTWO_POPOVER_DISPLAY(true)
+                  setTWO_POPOVER_MARGIN_LEFT(250)
+                }}
+                className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-primary"
+              >
                 <div className="flex flex-1 items-center space-x-2">
                   <MessageCircleCode className="h-4 w-4" />
                   <span className="text-sm text-primary ">Add Comment</span>
@@ -56,7 +69,13 @@ export default function IndexPage() {
                 </span>
               </div>
 
-              <div className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-primary">
+              <div
+                onClick={() => {
+                  setTWO_POPOVER_DISPLAY(true)
+                  setTWO_POPOVER_MARGIN_LEFT(500)
+                }}
+                className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-primary"
+              >
                 <div className="flex flex-1 items-center space-x-2">
                   <CircleCheck className="h-4 w-4" />
                   <span className="text-sm text-primary">Approve Changes</span>
@@ -67,55 +86,73 @@ export default function IndexPage() {
               </div>
             </div>
 
-            <div className="min-w-[250px] rounded-md border p-2">
-              <div className="flex flex-col space-y-2">
-                <div className="flex">
-                  <span className="flex-1 text-sm text-primary">
-                    Approve Changes
-                  </span>
-                  <span className="flex items-center rounded-sm bg-muted p-1 text-xs text-muted-foreground">
-                    @ajju...
-                  </span>
-                </div>
-                <div className="flex flex-col space-y-1 rounded-md bg-primary-foreground p-2">
-                  <span className="flex-1 text-xs text-primary">
-                    Feat: New Title Added
-                  </span>
-                  <span className="flex-1 text-xs text-muted-foreground">
-                    Sumon is a new designer.
-                  </span>
-                </div>
-                <div className="flex space-x-2">
-                  <Button className="h-8 w-full" variant="default">
-                    Back
-                  </Button>
-                  <Button className="h-8 w-full" variant="outline">
-                    Approve
-                  </Button>
+            <div
+              style={{ display: `${TWO_POPOVER_DISPLAY ? "inline" : "none"}` }}
+            >
+              <div className="w-[250px] rounded-md p-2">
+                <div className="flex flex-col space-y-2">
+                  <div className="flex">
+                    <span className="flex-1 text-sm text-primary">
+                      Approve Changes
+                    </span>
+                    <span className="flex items-center rounded-sm bg-muted p-1 text-xs text-muted-foreground">
+                      @ajju...
+                    </span>
+                  </div>
+                  <div className="flex flex-col space-y-1 rounded-md bg-primary-foreground p-2">
+                    <span className="flex-1 text-xs text-primary">
+                      Feat: New Title Added
+                    </span>
+                    <span className="flex-1 text-xs text-muted-foreground">
+                      Sumon is a new designer.
+                    </span>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Button
+                      onClick={() => {
+                        setTWO_POPOVER_MARGIN_LEFT(0)
+                        setTWO_POPOVER_DISPLAY(!TWO_POPOVER_DISPLAY)
+                      }}
+                      className="h-8 w-full"
+                      variant="default"
+                    >
+                      Back
+                    </Button>
+                    <Button className="h-8 w-full" variant="outline">
+                      Approve
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="min-w-[250px] rounded-md border p-2">
-              <div className="flex flex-col space-y-2">
-                <div className="flex">
-                  <span className="flex-1 text-sm text-primary">
-                    Add Comment
-                  </span>
-                  <span className="flex items-center rounded-sm bg-muted p-1 text-xs text-muted-foreground">
-                    Create Thread
-                  </span>
-                </div>
+              <div className="w-[250px] rounded-md p-2">
+                <div className="flex flex-col space-y-2">
+                  <div className="flex">
+                    <span className="flex-1 text-sm text-primary">
+                      Add Comment
+                    </span>
+                    <span className="flex items-center rounded-sm bg-muted p-1 text-xs text-muted-foreground">
+                      Create Thread
+                    </span>
+                  </div>
 
-                <Textarea placeholder="Type your comment here." />
+                  <Textarea placeholder="Type your comment here." />
 
-                <div className="flex space-x-2">
-                  <Button className="h-8 w-full" variant="default">
-                    Back
-                  </Button>
-                  <Button className="h-8 w-full" variant="outline">
-                    Submit
-                  </Button>
+                  <div className="flex space-x-2">
+                    <Button
+                      onClick={() => {
+                        setTWO_POPOVER_MARGIN_LEFT(0)
+                        setTWO_POPOVER_DISPLAY(!TWO_POPOVER_DISPLAY)
+                      }}
+                      className="h-8 w-full"
+                      variant="default"
+                    >
+                      Back
+                    </Button>
+                    <Button className="h-8 w-full" variant="outline">
+                      Submit
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>

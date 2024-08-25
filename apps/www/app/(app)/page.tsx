@@ -11,15 +11,22 @@
 // } from "@/components/page-header"
 // import { Button } from "@/registry/new-york/ui/button"
 // import MailPage from "@/app/(app)/examples/mail/page"
+"use client"
 import { CircleCheck, HardDrive, MessageCircleCode } from "lucide-react"
 
+import { Button } from "@/registry/default/ui/button"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
+import { Textarea } from "@/registry/default/ui/textarea"
+import { useState } from "react";
 
 export default function IndexPage() {
+
+  const [TWOSTEPPOPOVER, setTWOSTEPPOPOVER] = useState(0);
+
   return (
     <div className="container relative">
       <h1>Two-Step Popover</h1>
@@ -37,9 +44,8 @@ export default function IndexPage() {
           <CircleCheck /> */}
             </span>
           </PopoverTrigger>
-          <PopoverContent className="flex w-auto space-x-2 border-none p-2">
-
-            <div className="w-72 rounded-md border p-2">
+          <PopoverContent className="flex w-[250px] space-x-2 overflow-x-auto overflow-y-hidden border-none bg-primary-foreground p-0">
+            <div className="min-w-[250px] rounded-md border p-2">
               <div className="flex items-center rounded-md p-2 text-muted-foreground  hover:bg-secondary hover:text-primary">
                 <div className="flex flex-1 items-center space-x-2">
                   <MessageCircleCode className="h-4 w-4" />
@@ -60,36 +66,59 @@ export default function IndexPage() {
                 </span>
               </div>
             </div>
-            <div className="w-72 rounded-md border p-2">
-              <div className="flex items-center rounded-md p-2 text-muted-foreground  hover:bg-secondary hover:text-primary">
-                <div className="flex flex-1 items-center space-x-2">
-                  <MessageCircleCode className="h-4 w-4" />
-                  <span className="text-sm text-primary ">Add Comment</span>
+
+            <div className="min-w-[250px] rounded-md border p-2">
+              <div className="flex flex-col space-y-2">
+                <div className="flex">
+                  <span className="flex-1 text-sm text-primary">
+                    Approve Changes
+                  </span>
+                  <span className="flex items-center rounded-sm bg-muted p-1 text-xs text-muted-foreground">
+                    @ajju...
+                  </span>
                 </div>
-                <span className="flex items-center text-xs text-muted-foreground">
-                  Reply Thread
-                </span>
-              </div>
-              <div className="flex items-center rounded-md p-2 text-muted-foreground  hover:bg-secondary hover:text-primary">
-                <div className="flex flex-1 items-center space-x-2">
-                  <MessageCircleCode className="h-4 w-4" />
-                  <span className="text-sm text-primary ">Add Comment</span>
+                <div className="flex flex-col space-y-1 rounded-md bg-primary-foreground p-2">
+                  <span className="flex-1 text-xs text-primary">
+                    Feat: New Title Added
+                  </span>
+                  <span className="flex-1 text-xs text-muted-foreground">
+                    Sumon is a new designer.
+                  </span>
                 </div>
-                <span className="flex items-center text-xs text-muted-foreground">
-                  Reply Thread
-                </span>
-              </div>
-              <div className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-primary">
-                <div className="flex flex-1 items-center space-x-2">
-                  <CircleCheck className="h-4 w-4" />
-                  <span className="text-sm text-primary">Approve Changes</span>
+                <div className="flex space-x-2">
+                  <Button className="h-8 w-full" variant="default">
+                    Back
+                  </Button>
+                  <Button className="h-8 w-full" variant="outline">
+                    Approve
+                  </Button>
                 </div>
-                <span className="flex items-center text-xs text-muted-foreground">
-                  Send Review
-                </span>
               </div>
             </div>
 
+            <div className="min-w-[250px] rounded-md border p-2">
+              <div className="flex flex-col space-y-2">
+                <div className="flex">
+                  <span className="flex-1 text-sm text-primary">
+                    Add Comment
+                  </span>
+                  <span className="flex items-center rounded-sm bg-muted p-1 text-xs text-muted-foreground">
+                    Create Thread
+                  </span>
+                </div>
+
+                <Textarea placeholder="Type your comment here." />
+
+                <div className="flex space-x-2">
+                  <Button className="h-8 w-full" variant="default">
+                    Back
+                  </Button>
+                  <Button className="h-8 w-full" variant="outline">
+                    Submit
+                  </Button>
+                </div>
+              </div>
+            </div>
           </PopoverContent>
         </Popover>
       </div>

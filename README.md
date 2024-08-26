@@ -8,5 +8,7 @@
 7. React Admin -> https://github.com/marmelab/react-admin.git
 8. Primereact -> https://github.com/primefaces/primereact.git
 9. Semanticui -> https://github.com/Semantic-Org/Semantic-UI.git
-
-* Bootstrap -> https://github.com/twbs/bootstrap.git https://github.com/react-bootstrap/react-bootstrap.git https://github.com/mdbootstrap/mdb-ui-kit.git
+10. Grommet -> https://github.com/grommet/grommet.git
+11. Mantine -> https://github.com/mantinedev/mantine.git
+12. Virtualized -> https://github.com/bvaughn/react-virtualized.git
+13. Bootstrap -> https://github.com/twbs/bootstrap.git https://github.com/react-bootstrap/react-bootstrap.git https://github.com/mdbootstrap/mdb-ui-kit.git

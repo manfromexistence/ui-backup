@@ -18,6 +18,7 @@ import { CircleCheck, HardDrive, MessageCircleCode } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import AnimatedTabs from "@/components/animated-tabs"
+import Slider from "@/components/elastic-slider"
 import { Button } from "@/registry/default/ui/button"
 import {
   Popover,
@@ -39,7 +40,8 @@ export default function IndexPage() {
         experimental.
       </span>
       <AnimatedTabs />
-      
+      <Slider />
+
       {/* <div
               style={{ display: `${TWO_POPOVER_DISPLAY ? "inline" : "none"}` }}
             >

@@ -29,17 +29,6 @@ export function MainNav() {
           Docs
         </Link>
         <Link
-          href="/designs"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/designs")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          Designs
-        </Link>
-        <Link
           href="/apprearences"
           className={cn(
             "transition-colors hover:text-foreground/80",
@@ -83,6 +72,28 @@ export function MainNav() {
         >
           Templates
         </Link>
+        {/* <Link
+          href="/designs"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/designs")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Designs
+        </Link>
+        <Link
+          href="/designs"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/designs")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Designs
+        </Link> */}
       </nav>
     </div>
   )

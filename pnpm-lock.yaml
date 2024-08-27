@@ -232,8 +232,8 @@ importers:
         specifier: 8.0.0-rc15
         version: 8.0.0-rc15(react@18.2.0)
       framer-motion:
-        specifier: ^11.0.24
-        version: 11.0.24(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 12.0.0-alpha.0
+        version: 12.0.0-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       geist:
         specifier: ^1.2.2
         version: 1.2.2(next@14.3.0-canary.43(@babel/core@7.22.1)(@opentelemetry/api@1.8.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
@@ -3566,8 +3566,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@11.0.24:
-    resolution: {integrity: sha512-l2iM8NR53qtcujgAqYvGPJJGModPNWEVUaATRDLfnaLvUoFpImovBm0AHalSSsY8tW6knP8mfJTW4WYGbnAe4w==}
+  framer-motion@12.0.0-alpha.0:
+    resolution: {integrity: sha512-rw0+O0kqsSFPrYrSnHXrZTGAKteCj9D9HzDdHjJR8GyPWADLoQstgUYeSvLxrO3P+HlBfQtmu/SOsM9eLhKXtQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -10004,7 +10004,7 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@11.0.24(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  framer-motion@12.0.0-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       tslib: 2.6.2
     optionalDependencies:

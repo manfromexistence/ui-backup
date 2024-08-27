@@ -17,6 +17,7 @@ import { useState } from "react"
 import { CircleCheck, HardDrive, MessageCircleCode } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import AnimatedTabs from "@/components/animated-tabs"
 import { Button } from "@/registry/default/ui/button"
 import {
   Popover,
@@ -37,13 +38,19 @@ export default function IndexPage() {
         feeling of the transition. Not quite there yet but hey, all of this is
         experimental.
       </span>
-      <div className="mt-4 flex h-[500px] w-full items-center justify-center rounded-md border">
+      <AnimatedTabs />
+      
+      {/* <div
+              style={{ display: `${TWO_POPOVER_DISPLAY ? "inline" : "none"}` }}
+            >
+
+            </div> */}
+
+      {/* <div className="mt-4 flex h-[500px] w-full items-center justify-center rounded-md border">
         <Popover>
           <PopoverTrigger asChild>
             <span className="flex h-10 w-10 items-center justify-center rounded-md bg-primary-foreground">
               <HardDrive className="h-4 w-4 text-muted-foreground hover:text-primary" />
-              {/* <MessageCircleCode />
-          <CircleCheck /> */}
             </span>
           </PopoverTrigger>
           <PopoverContent className="flex w-[250px] space-x-2 overflow-hidden border-none bg-primary-foreground p-0">
@@ -56,7 +63,7 @@ export default function IndexPage() {
               <div
                 onClick={() => {
                   setTWO_POPOVER_DISPLAY(true)
-                  setTWO_POPOVER_MARGIN_LEFT(250)
+                  setTWO_POPOVER_MARGIN_LEFT(257.5)
                 }}
                 className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-primary"
               >
@@ -72,7 +79,7 @@ export default function IndexPage() {
               <div
                 onClick={() => {
                   setTWO_POPOVER_DISPLAY(true)
-                  setTWO_POPOVER_MARGIN_LEFT(500)
+                  setTWO_POPOVER_MARGIN_LEFT(515)
                 }}
                 className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-primary"
               >
@@ -152,15 +159,15 @@ export default function IndexPage() {
                 </div>
               </div>
             </div>
+          </PopoverContent>
+        </Popover>
+      </div> */}
 
-            {/* <div
+      {/* <div
               style={{ display: `${TWO_POPOVER_DISPLAY ? "inline" : "none"}` }}
             >
 
             </div> */}
-          </PopoverContent>
-        </Popover>
-      </div>
       {/* <PageHeader>
         <Announcement />
         <PageHeaderHeading>Build your component library</PageHeaderHeading>

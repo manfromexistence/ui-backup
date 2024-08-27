@@ -61,7 +61,7 @@
     "date-fns": "^2.30.0",
     "embla-carousel-autoplay": "8.0.0-rc15",
     "embla-carousel-react": "8.0.0-rc15",
-    "framer-motion": "^11.0.24",
+    "framer-motion": "12.0.0-alpha.0",
     "geist": "^1.2.2",
     "input-otp": "^1.2.2",
     "jotai": "^2.1.0",

@@ -140,17 +140,37 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "One",
-          href: "/docs/one",
+          href: "/docs/landing/one",
           items: [],
         },
         {
           title: "Two",
-          href: "/docs/two",
+          href: "/docs/landing/two",
           items: [],
         },
         {
           title: "Three",
-          href: "/docs/three",
+          href: "/docs/landing/three",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Charts",
+      items: [
+        {
+          title: "One",
+          href: "/docs/charts/one",
+          items: [],
+        },
+        {
+          title: "Two",
+          href: "/docs/charts/two",
+          items: [],
+        },
+        {
+          title: "Three",
+          href: "/docs/charts/three",
           items: [],
         },
       ],
@@ -160,17 +180,17 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "One",
-          href: "/docs/one",
+          href: "/docs/admin/one",
           items: [],
         },
         {
           title: "Two",
-          href: "/docs/two",
+          href: "/docs/admin/two",
           items: [],
         },
         {
           title: "Three",
-          href: "/docs/three",
+          href: "/docs/admin/three",
           items: [],
         },
       ],
@@ -180,17 +200,17 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "One",
-          href: "/docs/one",
+          href: "/docs/visulization/one",
           items: [],
         },
         {
           title: "Two",
-          href: "/docs/two",
+          href: "/docs/visulization/two",
           items: [],
         },
         {
           title: "Three",
-          href: "/docs/three",
+          href: "/docs/visulization/three",
           items: [],
         },
       ],

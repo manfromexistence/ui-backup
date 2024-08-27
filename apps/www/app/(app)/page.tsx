@@ -1,24 +1,10 @@
-// import Image from "next/image"
-// import Link from "next/link"
-// import { siteConfig } from "@/config/site"
-// import { Announcement } from "@/components/announcement"
-// import { ExamplesNav } from "@/components/examples-nav"
-// import {
-//   PageActions,
-//   PageHeader,
-//   PageHeaderDescription,
-//   PageHeaderHeading,
-// } from "@/components/page-header"
-// import { Button } from "@/registry/new-york/ui/button"
-// import MailPage from "@/app/(app)/examples/mail/page"
 "use client"
 
 import { useState } from "react"
 import { CircleCheck, HardDrive, MessageCircleCode } from "lucide-react"
 
-import { cn } from "@/lib/utils"
-import AnimatedTabs from "@/components/animated-tabs"
-import Slider from "@/components/elastic-slider"
+import AnimatedTabs from "@/components/build-ui/animated-tabs"
+import Slider from "@/components/build-ui/elastic-slider"
 import { Button } from "@/registry/default/ui/button"
 import {
   Popover,
@@ -41,14 +27,7 @@ export default function IndexPage() {
       </span>
       <AnimatedTabs />
       <Slider />
-
-      {/* <div
-              style={{ display: `${TWO_POPOVER_DISPLAY ? "inline" : "none"}` }}
-            >
-
-            </div> */}
-
-      {/* <div className="mt-4 flex h-[500px] w-full items-center justify-center rounded-md border">
+      <div className="mt-4 flex h-[500px] w-full items-center justify-center rounded-md border">
         <Popover>
           <PopoverTrigger asChild>
             <span className="flex h-10 w-10 items-center justify-center rounded-md bg-primary-foreground">
@@ -77,7 +56,6 @@ export default function IndexPage() {
                   Reply Thread
                 </span>
               </div>
-
               <div
                 onClick={() => {
                   setTWO_POPOVER_DISPLAY(true)
@@ -94,7 +72,6 @@ export default function IndexPage() {
                 </span>
               </div>
             </div>
-
             <div className="min-w-full rounded-md p-2">
               <div className="flex flex-col space-y-2">
                 <div className="flex">
@@ -130,7 +107,6 @@ export default function IndexPage() {
                 </div>
               </div>
             </div>
-
             <div className="min-w-full rounded-md p-2">
               <div className="flex flex-col space-y-2">
                 <div className="flex">
@@ -141,9 +117,7 @@ export default function IndexPage() {
                     Create Thread
                   </span>
                 </div>
-
                 <Textarea placeholder="Type your comment here." />
-
                 <div className="flex space-x-2">
                   <Button
                     onClick={() => {
@@ -163,57 +137,7 @@ export default function IndexPage() {
             </div>
           </PopoverContent>
         </Popover>
-      </div> */}
-
-      {/* <div
-              style={{ display: `${TWO_POPOVER_DISPLAY ? "inline" : "none"}` }}
-            >
-
-            </div> */}
-      {/* <PageHeader>
-        <Announcement />
-        <PageHeaderHeading>Build your component library</PageHeaderHeading>
-        <PageHeaderDescription>
-          Beautifully designed components that you can copy and paste into your
-          apps.
-        </PageHeaderDescription>
-        <PageActions>
-          <Button asChild size="sm">
-            <Link href="/docs">Get Started</Link>
-          </Button>
-          <Button asChild size="sm" variant="ghost">
-            <Link
-              target="_blank"
-              rel="noreferrer"
-              href={siteConfig.links.github}
-            >
-              GitHub
-            </Link>
-          </Button>
-        </PageActions>
-      </PageHeader>
-      <ExamplesNav className="[&>a:first-child]:text-primary" />
-      <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
-        <Image
-          src="/examples/mail-dark.png"
-          width={1280}
-          height={727}
-          alt="Mail"
-          className="hidden dark:block"
-        />
-        <Image
-          src="/examples/mail-light.png"
-          width={1280}
-          height={727}
-          alt="Mail"
-          className="block dark:hidden"
-        />
-      </section>
-      <section className="hidden md:block">
-        <div className="overflow-hidden rounded-lg border bg-background shadow">
-          <MailPage />
-        </div>
-      </section> */}
+      </div>
     </div>
   )
 }

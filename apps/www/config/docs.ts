@@ -21,12 +21,12 @@ export const docsConfig: DocsConfig = {
       href: "/renderers",
     },
     {
-      title: "Templates",
-      href: "/templates",
+      title: "Tools",
+      href: "/tools",
     },
     {
-      title: "Others",
-      href: "/others",
+      title: "Templates",
+      href: "/templates",
     },
   ],
   sidebarNav: [

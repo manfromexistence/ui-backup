@@ -23,7 +23,8 @@ const ButtonContainer = () => {
     initial: { height: 75 }, // Set initial height to 0
     clicked: {
       height:
-        (containerRef.current?.firstChild as HTMLElement)?.clientHeight || 0,
+        (containerRef.current?.children[1] as HTMLElement)?.clientHeight ||
+        100 + 50,
       transition: {
         type: "spring",
         stiffness: 200, // Adjust stiffness for bounce effect
@@ -33,18 +34,22 @@ const ButtonContainer = () => {
   }
 
   const backButtonVariants = {
-    initial: { marginLeft: 0, display: "none" },
-    visible: { marginLeft: "50px", display: "block" },
+    // initial: {
+    //   display: "none",
+    // },
+    // visible: { display: "block" },
+    initial: { display: "none" },
+    visible: { display: "block" },
   }
 
   const nextButtonVariants = {
     initial: { marginLeft: 0, display: "block" },
-    visible: { marginLeft: "-50px", display: "block" },
+    visible: { marginLeft: "-200px", display: "none" },
   }
 
   return (
     <motion.div
-      className="my-10 flex h-auto w-[100px] space-x-3 overflow-hidden rounded-md border p-3"
+      className="my-10 flex h-auto w-[100px] items-center justify-center space-x-3 overflow-hidden rounded-md border p-3"
       ref={containerRef}
       variants={containerVariants}
       initial="initial"
@@ -63,11 +68,14 @@ const ButtonContainer = () => {
         Next
       </motion.button>
       <motion.button
-        className="h-24 rounded-md bg-blue-500 px-4 py-2 text-white"
+        className="h-32 rounded-md bg-blue-500 px-4 py-2 text-white"
         variants={backButtonVariants}
         initial="initial"
         animate={isClicked ? "visible" : "initial"}
-        onClick={() => setIsClicked(!isClicked)}
+        onClick={() => {
+          setIsClicked(!isClicked)
+          setIsNextClicked(!isNextClicked)
+        }}
       >
         Back
       </motion.button>

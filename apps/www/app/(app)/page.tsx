@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
+import { motion } from "framer-motion"
 import { CircleCheck, HardDrive, MessageCircleCode } from "lucide-react"
 
 import AnimatedTabs from "@/components/build-ui/animated-tabs"
@@ -12,6 +13,55 @@ import {
   PopoverTrigger,
 } from "@/registry/default/ui/popover"
 import { Textarea } from "@/registry/default/ui/textarea"
+
+const ButtonContainer = () => {
+  const [isClicked, setIsClicked] = useState(false)
+
+  const containerVariants = {
+    initial: { marginLeft: 0, height: "40px" }, // Set initial height
+    clicked: {
+      marginLeft: "-80px", // Adjust the margin value as needed
+      height: "80px", // Adjust the height to match the back button
+      transition: {
+        type: "spring",
+        stiffness: 200, // Adjust stiffness for bounce effect
+        damping: 10,
+      },
+    },
+  }
+
+  const backButtonVisibility = {
+    initial: { opacity: 0, display: "none" },
+    visible: { opacity: 1, display: "block" },
+  }
+
+  return (
+    <div className="my-10 flex h-auto w-[100px] space-x-3 overflow-hidden rounded-md border p-3">
+      <motion.div
+        className="rounded-md"
+        variants={containerVariants}
+        initial="initial"
+        animate={isClicked ? "clicked" : "initial"}
+      >
+        <button
+          className="w-full rounded-md bg-blue-500 px-4 py-2 text-white"
+          onClick={() => setIsClicked(!isClicked)}
+        >
+          Next
+        </button>
+      </motion.div>
+      <motion.button
+        className="h-24 rounded-md bg-blue-500 px-4 py-2 text-white"
+        variants={backButtonVisibility}
+        initial="initial"
+        animate={isClicked ? "visible" : "initial"}
+        onClick={() => setIsClicked(!isClicked)}
+      >
+        Back
+      </motion.button>
+    </div>
+  )
+}
 
 export default function IndexPage() {
   const [TWO_POPOVER_MARGIN_LEFT, setTWO_POPOVER_MARGIN_LEFT] = useState(0)
@@ -25,6 +75,7 @@ export default function IndexPage() {
         feeling of the transition. Not quite there yet but hey, all of this is
         experimental.
       </span>
+      <ButtonContainer />
       <AnimatedTabs />
       <Slider />
       <div className="mt-4 flex h-[500px] w-full items-center justify-center rounded-md border">

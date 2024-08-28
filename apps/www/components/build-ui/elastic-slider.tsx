@@ -1,7 +1,6 @@
 "use client";
 
-// import { SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/20/solid";
-
+import { SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/20/solid";
 import * as RadixSlider from "@radix-ui/react-slider";
 import {
   animate,
@@ -10,7 +9,6 @@ import {
   useMotionValueEvent,
   useTransform,
 } from "framer-motion";
-import { Volume2, VolumeX } from "lucide-react";
 import { ElementRef, useRef, useState } from "react";
 
 const MAX_OVERFLOW = 50;
@@ -67,7 +65,7 @@ export default function Slider() {
           ),
         }}
       >
-        <Volume2 className="size-5 translate-x-0 translate-y-0 text-white" />
+        <SpeakerXMarkIcon className="size-5 translate-x-0 translate-y-0 text-white" />
       </motion.div>
 
       <RadixSlider.Root
@@ -126,7 +124,7 @@ export default function Slider() {
           ),
         }}
       >
-        <VolumeX className="size-5 translate-x-0 translate-y-0 text-white" />
+        <SpeakerWaveIcon className="size-5 translate-x-0 translate-y-0 text-white" />
       </motion.div>
     </motion.div>
   );

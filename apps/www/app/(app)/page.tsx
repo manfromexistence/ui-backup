@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { CircleCheck, HardDrive, MessageCircleCode } from "lucide-react"
 
@@ -16,19 +16,14 @@ import { Textarea } from "@/registry/default/ui/textarea"
 
 const ButtonContainer = () => {
   const [isClicked, setIsClicked] = useState(false)
+  const [isNextClicked, setIsNextClicked] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   const containerVariants = {
-    initial: { height: "40px" }, // Set initial height
+    initial: { height: 75 }, // Set initial height to 0
     clicked: {
-      height: "80px", // Adjust the height to match the back button
-      transition: {
-        type: "spring",
-        stiffness: 200, // Adjust stiffness for bounce effect
-        damping: 10,
-      },
-    },
-    nextButtonClicked: {
-      marginLeft: "-80px", // Adjust the height to match the back button
+      height:
+        (containerRef.current?.firstChild as HTMLElement)?.clientHeight || 0,
       transition: {
         type: "spring",
         stiffness: 200, // Adjust stiffness for bounce effect
@@ -37,29 +32,39 @@ const ButtonContainer = () => {
     },
   }
 
-  const backButtonVisibility = {
-    initial: { opacity: 0, display: "none" },
-    visible: { opacity: 1, display: "block" },
+  const backButtonVariants = {
+    initial: { marginLeft: 0, display: "none" },
+    visible: { marginLeft: "50px", display: "block" },
+  }
+
+  const nextButtonVariants = {
+    initial: { marginLeft: 0, display: "block" },
+    visible: { marginLeft: "-50px", display: "block" },
   }
 
   return (
     <motion.div
       className="my-10 flex h-auto w-[100px] space-x-3 overflow-hidden rounded-md border p-3"
+      ref={containerRef}
       variants={containerVariants}
       initial="initial"
       animate={isClicked ? "clicked" : "initial"}
     >
       <motion.button
-        className="h-10 rounded-md bg-blue-500 px-4 py-2 text-white"
-        // initial="initial"
-        animate="nextButtonClicked"
-        onClick={() => setIsClicked(!isClicked)}
+        variants={nextButtonVariants}
+        className="w-full rounded-md bg-blue-500 px-4 py-2 text-white"
+        initial="initial"
+        animate={isNextClicked ? "visible" : "initial"}
+        onClick={() => {
+          setIsNextClicked(!isNextClicked)
+          setIsClicked(!isClicked)
+        }}
       >
         Next
       </motion.button>
       <motion.button
         className="h-24 rounded-md bg-blue-500 px-4 py-2 text-white"
-        variants={backButtonVisibility}
+        variants={backButtonVariants}
         initial="initial"
         animate={isClicked ? "visible" : "initial"}
         onClick={() => setIsClicked(!isClicked)}
@@ -69,6 +74,7 @@ const ButtonContainer = () => {
     </motion.div>
   )
 }
+
 export default function IndexPage() {
   const [TWO_POPOVER_MARGIN_LEFT, setTWO_POPOVER_MARGIN_LEFT] = useState(0)
   const [TWO_POPOVER_DISPLAY, setTWO_POPOVER_DISPLAY] = useState(false)
@@ -83,7 +89,7 @@ export default function IndexPage() {
       </span>
       <ButtonContainer />
       <AnimatedTabs />
-      <Slider />
+      {/* <Slider /> */}
       <div className="mt-4 flex h-[500px] w-full items-center justify-center rounded-md border">
         <Popover>
           <PopoverTrigger asChild>

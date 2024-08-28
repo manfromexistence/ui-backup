@@ -18,10 +18,17 @@ const ButtonContainer = () => {
   const [isClicked, setIsClicked] = useState(false)
 
   const containerVariants = {
-    initial: { marginLeft: 0, height: "40px" }, // Set initial height
+    initial: { height: "40px" }, // Set initial height
     clicked: {
-      marginLeft: "-80px", // Adjust the margin value as needed
       height: "80px", // Adjust the height to match the back button
+      transition: {
+        type: "spring",
+        stiffness: 200, // Adjust stiffness for bounce effect
+        damping: 10,
+      },
+    },
+    nextButtonClicked: {
+      marginLeft: "-80px", // Adjust the height to match the back button
       transition: {
         type: "spring",
         stiffness: 200, // Adjust stiffness for bounce effect
@@ -36,20 +43,20 @@ const ButtonContainer = () => {
   }
 
   return (
-    <div className="my-10 flex h-auto w-[100px] space-x-3 overflow-hidden rounded-md border p-3">
-      <motion.div
-        className="rounded-md"
-        variants={containerVariants}
-        initial="initial"
-        animate={isClicked ? "clicked" : "initial"}
+    <motion.div
+      className="my-10 flex h-auto w-[100px] space-x-3 overflow-hidden rounded-md border p-3"
+      variants={containerVariants}
+      initial="initial"
+      animate={isClicked ? "clicked" : "initial"}
+    >
+      <motion.button
+        className="h-10 rounded-md bg-blue-500 px-4 py-2 text-white"
+        // initial="initial"
+        animate="nextButtonClicked"
+        onClick={() => setIsClicked(!isClicked)}
       >
-        <button
-          className="w-full rounded-md bg-blue-500 px-4 py-2 text-white"
-          onClick={() => setIsClicked(!isClicked)}
-        >
-          Next
-        </button>
-      </motion.div>
+        Next
+      </motion.button>
       <motion.button
         className="h-24 rounded-md bg-blue-500 px-4 py-2 text-white"
         variants={backButtonVisibility}
@@ -59,10 +66,9 @@ const ButtonContainer = () => {
       >
         Back
       </motion.button>
-    </div>
+    </motion.div>
   )
 }
-
 export default function IndexPage() {
   const [TWO_POPOVER_MARGIN_LEFT, setTWO_POPOVER_MARGIN_LEFT] = useState(0)
   const [TWO_POPOVER_DISPLAY, setTWO_POPOVER_DISPLAY] = useState(false)

@@ -1,0 +1,55 @@
+---
+title: Two-Step Popover (tspopover)
+description: A popover component that provides a multi-step experience with transitions between different views.
+component: true
+---
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+  <Steps>
+    <Step>Run the following command:</Step>
+    ```bash
+    npx better-ui@latest add tspopover
+    ```
+    <Step>Update `tailwind.config.js`</Step>
+    </Steps>
+</TabsContent>
+
+<TabsContent value="manual">
+  <Steps>
+    <Step>Install the following dependencies:</Step>
+    ```bash
+    npm install @your-package-name/tspopover
+    ```
+    <Step>Copy and paste the following code into your project:</Step>
+    <ComponentSource name="tspopover" />
+    <Step>Update the import paths to match your project setup.</Step>
+    <Step>Update `tailwind.config.js`</Step>
+    </Steps>
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { Tspopover, TspopoverTrigger, TspopoverContent } from "@/components/ui/tspopover";
+
+<Tspopover>
+  <TspopoverTrigger>Trigger Button</TspopoverTrigger>
+  <TspopoverContent>
+    {/* Content for the initial popover view */}
+    <ul>
+      <li onClick={handleListItemClick}>Item 1</li>
+      <li onClick={handleListItemClick}>Item 2</li>
+    </ul>
+  </TspopoverContent>
+</Tspopover>

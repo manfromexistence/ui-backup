@@ -91,7 +91,7 @@ export default function IndexPage() {
   const [TWO_POPOVER_DISPLAY, setTWO_POPOVER_DISPLAY] = useState(false)
 
   return (
-    <div className="container relative">
+    <div className="container relative flex max-w-[1200px] flex-col gap-4 py-4 md:flex-row md:py-8">
       {/* <motion.div
         drag={true}
         dragConstraints={{ left: 0, right: 0, top:0, bottom:0 }}
@@ -109,16 +109,19 @@ export default function IndexPage() {
       >
         Hello World!
       </motion.div> */}
-      <h1>Two-Step Popover</h1>
-      <span>
-        Experimenting how a two-step popover can be implemented and getting a
-        feeling of the transition. Not quite there yet but hey, all of this is
-        experimental.
-      </span>
+      <div className="flex flex-col gap-2 md:w-[300px]">
+        <h1 className="text-xl font-bold">Two-Step Popover</h1>
+        <span className="text-sm">
+          Experimenting how a two-step popover can be implemented and getting a
+          feeling of the transition. Not quite there yet but hey, all of this is
+          experimental.
+        </span>
+      </div>
+
       {/* <ButtonContainer />
       <AnimatedTabs />
       <Slider /> */}
-      <div className="mt-4 flex h-[500px] w-full items-center justify-center rounded-md border">
+      <div className="flex min-h-[250px] w-full items-center justify-center rounded-md border sm:min-h-[500px] md:min-w-[350px]">
         <Popover>
           <PopoverTrigger asChild>
             <span className="flex h-10 w-10 items-center justify-center rounded-md bg-primary-foreground">

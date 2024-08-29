@@ -26,7 +26,7 @@ export function MainNav() {
             pathname === "/docs" ? "text-foreground" : "text-foreground/60"
           )}
         >
-          Documentations
+          Docs
         </Link>
         <Link
           href="/apprearences"

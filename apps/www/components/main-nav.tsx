@@ -51,17 +51,6 @@ export function MainNav() {
           Renderers
         </Link>
         <Link
-          href="/tools"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/tools")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
-        >
-          Tools
-        </Link>
-        <Link
           href="/templates"
           className={cn(
             "transition-colors hover:text-foreground/80",
@@ -71,6 +60,17 @@ export function MainNav() {
           )}
         >
           Templates
+        </Link>
+        <Link
+          href="/tools"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/tools")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Tools
         </Link>
       </nav>
     </div>

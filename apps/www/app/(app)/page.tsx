@@ -115,9 +115,9 @@ export default function IndexPage() {
         feeling of the transition. Not quite there yet but hey, all of this is
         experimental.
       </span>
-      <ButtonContainer />
+      {/* <ButtonContainer />
       <AnimatedTabs />
-      <Slider />
+      <Slider /> */}
       <div className="mt-4 flex h-[500px] w-full items-center justify-center rounded-md border">
         <Popover>
           <PopoverTrigger asChild>
@@ -140,7 +140,7 @@ export default function IndexPage() {
                 className="group flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary"
               >
                 <div className="flex flex-1 items-center space-x-2">
-                  <MessageCircle className="h-4 w-4 fill-muted-foreground text-muted group-hover:fill-primary group-hover:text-primary-foreground" />
+                  <MessageCircle className=" h-4 w-4 fill-muted-foreground text-muted group-hover:fill-primary group-hover:text-primary-foreground" />
                   <span className="text-sm text-primary ">Add Comment</span>
                 </div>
                 <span className="flex items-center text-xs text-muted-foreground">
@@ -226,7 +226,6 @@ export default function IndexPage() {
                 </div>
               </div>
             </div> */}
-
           </PopoverContent>
         </Popover>
       </div>

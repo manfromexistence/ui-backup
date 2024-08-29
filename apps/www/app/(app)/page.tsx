@@ -2,7 +2,13 @@
 
 import React, { useRef, useState } from "react"
 import { motion } from "framer-motion"
-import { CircleCheck, HardDrive, MessageCircleCode } from "lucide-react"
+import {
+  CircleCheck,
+  HardDrive,
+  MessageCircle,
+  MessageCircleCode,
+  MessageSquareText,
+} from "lucide-react"
 
 import AnimatedTabs from "@/components/build-ui/animated-tabs"
 import Slider from "@/components/build-ui/elastic-slider"
@@ -131,10 +137,10 @@ export default function IndexPage() {
                   setTWO_POPOVER_DISPLAY(true)
                   setTWO_POPOVER_MARGIN_LEFT(257.5)
                 }}
-                className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-primary"
+                className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary"
               >
                 <div className="flex flex-1 items-center space-x-2">
-                  <MessageCircleCode className="h-4 w-4" />
+                  <MessageCircle className="h-4 w-4 fill-muted-foreground text-muted" />
                   <span className="text-sm text-primary ">Add Comment</span>
                 </div>
                 <span className="flex items-center text-xs text-muted-foreground">
@@ -146,10 +152,10 @@ export default function IndexPage() {
                   setTWO_POPOVER_DISPLAY(true)
                   setTWO_POPOVER_MARGIN_LEFT(515)
                 }}
-                className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-primary"
+                className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary"
               >
                 <div className="flex flex-1 items-center space-x-2">
-                  <CircleCheck className="h-4 w-4" />
+                  <CircleCheck className="h-4 w-4 fill-muted-foreground text-muted" />
                   <span className="text-sm text-primary">Approve Changes</span>
                 </div>
                 <span className="flex items-center text-xs text-muted-foreground">
@@ -157,7 +163,7 @@ export default function IndexPage() {
                 </span>
               </div>
             </div>
-            <div className="min-w-full rounded-md p-2">
+            {/* <div className="min-w-full rounded-md p-2">
               <div className="flex flex-col space-y-2">
                 <div className="flex">
                   <span className="flex-1 text-sm text-primary">
@@ -219,7 +225,8 @@ export default function IndexPage() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </div> */}
+
           </PopoverContent>
         </Popover>
       </div>

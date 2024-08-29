@@ -88,8 +88,25 @@ export default function IndexPage() {
   const [TWO_POPOVER_DISPLAY, setTWO_POPOVER_DISPLAY] = useState(false)
 
   return (
-    <div className="container relative">
-      <h1>Two-Step Popover</h1>
+    <div className="container relative my-8 flex items-center justify-center">
+      <motion.div
+        drag={true}
+        dragConstraints={{ left: 0, right: 0, top:0, bottom:0 }}
+        dragElastic={0.2}
+        whileHover={{ scale: 1.2 }}
+        onHoverStart={(e: any) => {
+          alert("hover start")
+        }}
+        onHoverEnd={(e: any) => {}}
+        whileTap={{ scale: 0.9 }}
+        whileFocus={{ scale: 0.1 }}
+        whileDrag={{ scale: 0.5 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        className="flex h-10 items-center justify-center rounded-md border p-4"
+      >
+        Hello World!
+      </motion.div>
+      {/* <h1>Two-Step Popover</h1>
       <span>
         Experimenting how a two-step popover can be implemented and getting a
         feeling of the transition. Not quite there yet but hey, all of this is
@@ -97,7 +114,7 @@ export default function IndexPage() {
       </span>
       <ButtonContainer />
       <AnimatedTabs />
-      {/* <Slider /> */}
+      <Slider />
       <div className="mt-4 flex h-[500px] w-full items-center justify-center rounded-md border">
         <Popover>
           <PopoverTrigger asChild>
@@ -208,7 +225,7 @@ export default function IndexPage() {
             </div>
           </PopoverContent>
         </Popover>
-      </div>
+      </div> */}
     </div>
   )
 }

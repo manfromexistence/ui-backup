@@ -137,10 +137,10 @@ export default function IndexPage() {
                   setTWO_POPOVER_DISPLAY(true)
                   setTWO_POPOVER_MARGIN_LEFT(257.5)
                 }}
-                className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary"
+                className="group flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary"
               >
                 <div className="flex flex-1 items-center space-x-2">
-                  <MessageCircle className="h-4 w-4 fill-muted-foreground text-muted" />
+                  <MessageCircle className="h-4 w-4 fill-muted-foreground text-muted group-hover:fill-primary group-hover:text-primary-foreground" />
                   <span className="text-sm text-primary ">Add Comment</span>
                 </div>
                 <span className="flex items-center text-xs text-muted-foreground">
@@ -152,10 +152,10 @@ export default function IndexPage() {
                   setTWO_POPOVER_DISPLAY(true)
                   setTWO_POPOVER_MARGIN_LEFT(515)
                 }}
-                className="flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary"
+                className="group flex items-center rounded-md p-2 text-muted-foreground hover:bg-secondary"
               >
                 <div className="flex flex-1 items-center space-x-2">
-                  <CircleCheck className="h-4 w-4 fill-muted-foreground text-muted" />
+                  <CircleCheck className="h-4 w-4 fill-muted-foreground text-muted group-hover:fill-primary group-hover:text-primary-foreground" />
                   <span className="text-sm text-primary">Approve Changes</span>
                 </div>
                 <span className="flex items-center text-xs text-muted-foreground">

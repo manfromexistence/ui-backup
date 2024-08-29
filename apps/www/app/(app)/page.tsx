@@ -20,11 +20,9 @@ const ButtonContainer = () => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   const containerVariants = {
-    initial: { height: 75 }, // Set initial height to 0
+    initial: { height: 100 }, // Set initial height to 0
     clicked: {
-      height:
-        (containerRef.current?.children[1] as HTMLElement)?.clientHeight ||
-        100 + 50,
+      height: "auto",
       transition: {
         type: "spring",
         stiffness: 200, // Adjust stiffness for bounce effect
@@ -34,10 +32,6 @@ const ButtonContainer = () => {
   }
 
   const backButtonVariants = {
-    // initial: {
-    //   display: "none",
-    // },
-    // visible: { display: "block" },
     initial: { display: "none" },
     visible: { display: "block" },
   }
@@ -49,15 +43,17 @@ const ButtonContainer = () => {
 
   return (
     <motion.div
-      className="my-10 flex h-auto w-[100px] items-center justify-center space-x-3 overflow-hidden rounded-md border p-3"
-      ref={containerRef}
-      variants={containerVariants}
-      initial="initial"
-      animate={isClicked ? "clicked" : "initial"}
+      layout
+      className="my-10 flex h-auto w-[100px] items-center justify-center overflow-hidden rounded-md border p-3"
+      // ref={containerRef}
+      // variants={containerVariants}
+      // initial="initial"
+      // animate={isClicked ? "clicked" : "initial"}
     >
       <motion.button
+        layout
         variants={nextButtonVariants}
-        className="w-full rounded-md bg-blue-500 px-4 py-2 text-white"
+        className="w-full rounded-md bg-green-500 px-4 py-2 text-white"
         initial="initial"
         animate={isNextClicked ? "visible" : "initial"}
         onClick={() => {
@@ -68,7 +64,8 @@ const ButtonContainer = () => {
         Next
       </motion.button>
       <motion.button
-        className="h-32 rounded-md bg-blue-500 px-4 py-2 text-white"
+        layout
+        className="h-32 rounded-md bg-red-500 px-4 py-2 text-white "
         variants={backButtonVariants}
         initial="initial"
         animate={isClicked ? "visible" : "initial"}
@@ -88,8 +85,8 @@ export default function IndexPage() {
   const [TWO_POPOVER_DISPLAY, setTWO_POPOVER_DISPLAY] = useState(false)
 
   return (
-    <div className="container relative my-8 flex items-center justify-center">
-      <motion.div
+    <div className="container relative">
+      {/* <motion.div
         drag={true}
         dragConstraints={{ left: 0, right: 0, top:0, bottom:0 }}
         dragElastic={0.2}
@@ -105,8 +102,8 @@ export default function IndexPage() {
         className="flex h-10 items-center justify-center rounded-md border p-4"
       >
         Hello World!
-      </motion.div>
-      {/* <h1>Two-Step Popover</h1>
+      </motion.div> */}
+      <h1>Two-Step Popover</h1>
       <span>
         Experimenting how a two-step popover can be implemented and getting a
         feeling of the transition. Not quite there yet but hey, all of this is
@@ -225,7 +222,7 @@ export default function IndexPage() {
             </div>
           </PopoverContent>
         </Popover>
-      </div> */}
+      </div>
     </div>
   )
 }

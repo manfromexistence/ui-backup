@@ -156,6 +156,66 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Text",
+      items: [
+        {
+          title: "One",
+          href: "/docs/text/one",
+          items: [],
+        },
+        {
+          title: "Two",
+          href: "/docs/text/two",
+          items: [],
+        },
+        {
+          title: "Three",
+          href: "/docs/text/three",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Input",
+      items: [
+        {
+          title: "One",
+          href: "/docs/input/one",
+          items: [],
+        },
+        {
+          title: "Two",
+          href: "/docs/input/two",
+          items: [],
+        },
+        {
+          title: "Three",
+          href: "/docs/input/three",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Media",
+      items: [
+        {
+          title: "One",
+          href: "/docs/media/one",
+          items: [],
+        },
+        {
+          title: "Two",
+          href: "/docs/media/two",
+          items: [],
+        },
+        {
+          title: "Three",
+          href: "/docs/media/three",
+          items: [],
+        },
+      ],
+    },
+    {
       title: "Charts",
       items: [
         {

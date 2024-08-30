@@ -27,11 +27,10 @@ export default function IndexPage() {
   return (
     <div className="container relative flex max-w-[1200px] flex-col gap-4 py-4 md:flex-row md:py-8">
       <div className="flex flex-col gap-2 md:w-[300px]">
-        <h1 className="text-xl font-bold">TS Popover</h1>
+        <h1 className="text-xl font-bold">Two Step Popover</h1>
         <span className="text-sm text-muted-foreground">
-          Experimenting how a two-step popover can be implemented and getting a
-          feeling of the transition. Not quite there yet but hey, all of this is
-          experimental.
+          This comopnents is inspired from uilabs&apos;s aweosome animated
+          components
         </span>
       </div>
       <div className="flex min-h-[250px] w-full items-center justify-center rounded-md border sm:min-h-[500px] md:min-w-[350px]">

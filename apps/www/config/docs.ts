@@ -44,11 +44,6 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "ui.json",
-          href: "/docs/ui-json",
-          items: [],
-        },
-        {
           title: "Mode",
           href: "/docs/mode",
           items: [],

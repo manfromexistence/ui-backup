@@ -1,3 +1,8 @@
+        {
+          title: "ui.json",
+          href: "/docs/ui-json",
+          items: [],
+        },
     {
       title: "Charts",
       items: [
@@ -31,69 +36,66 @@
       <Slider /> */}
 
 const ButtonContainer = () => {
-  const [isClicked, setIsClicked] = useState(false)
-  const [isNextClicked, setIsNextClicked] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
+const [isClicked, setIsClicked] = useState(false)
+const [isNextClicked, setIsNextClicked] = useState(false)
+const containerRef = useRef<HTMLDivElement>(null)
 
-  const containerVariants = {
-    initial: { height: 100 }, // Set initial height to 0
-    clicked: {
-      height: "auto",
-      transition: {
-        type: "spring",
-        stiffness: 200, // Adjust stiffness for bounce effect
-        damping: 10,
-      },
-    },
-  }
+const containerVariants = {
+initial: { height: 100 }, // Set initial height to 0
+clicked: {
+height: "auto",
+transition: {
+type: "spring",
+stiffness: 200, // Adjust stiffness for bounce effect
+damping: 10,
+},
+},
+}
 
-  const backButtonVariants = {
-    initial: { display: "none" },
-    visible: { display: "block" },
-  }
+const backButtonVariants = {
+initial: { display: "none" },
+visible: { display: "block" },
+}
 
-  const nextButtonVariants = {
-    initial: { marginLeft: 0, display: "block" },
-    visible: { marginLeft: "-200px", display: "none" },
-  }
+const nextButtonVariants = {
+initial: { marginLeft: 0, display: "block" },
+visible: { marginLeft: "-200px", display: "none" },
+}
 
-  return (
-    <motion.div
-      layout
-      className="my-10 flex h-auto w-[100px] items-center justify-center overflow-hidden rounded-md border p-3"
-      // ref={containerRef}
-      // variants={containerVariants}
-      // initial="initial"
-      // animate={isClicked ? "clicked" : "initial"}
-    >
-      <motion.button
-        layout
-        variants={nextButtonVariants}
-        className="w-full rounded-md bg-green-500 px-4 py-2 text-white"
-        initial="initial"
-        animate={isNextClicked ? "visible" : "initial"}
-        onClick={() => {
-          setIsNextClicked(!isNextClicked)
-          setIsClicked(!isClicked)
-        }}
-      >
-        Next
-      </motion.button>
-      <motion.button
-        layout
-        className="h-32 rounded-md bg-red-500 px-4 py-2 text-white "
-        variants={backButtonVariants}
-        initial="initial"
-        animate={isClicked ? "visible" : "initial"}
-        onClick={() => {
-          setIsClicked(!isClicked)
-          setIsNextClicked(!isNextClicked)
-        }}
-      >
-        Back
-      </motion.button>
-    </motion.div>
-  )
+return (
+<motion.div
+layout
+className="my-10 flex h-auto w-[100px] items-center justify-center overflow-hidden rounded-md border p-3"
+// ref={containerRef}
+// variants={containerVariants}
+// initial="initial"
+// animate={isClicked ? "clicked" : "initial"} >
+<motion.button
+layout
+variants={nextButtonVariants}
+className="w-full rounded-md bg-green-500 px-4 py-2 text-white"
+initial="initial"
+animate={isNextClicked ? "visible" : "initial"}
+onClick={() => {
+setIsNextClicked(!isNextClicked)
+setIsClicked(!isClicked)
+}} >
+Next
+</motion.button>
+<motion.button
+layout
+className="h-32 rounded-md bg-red-500 px-4 py-2 text-white "
+variants={backButtonVariants}
+initial="initial"
+animate={isClicked ? "visible" : "initial"}
+onClick={() => {
+setIsClicked(!isClicked)
+setIsNextClicked(!isNextClicked)
+}} >
+Back
+</motion.button>
+</motion.div>
+)
 }
 
       {/* <motion.div
@@ -113,9 +115,9 @@ const ButtonContainer = () => {
       >
         Hello World!
       </motion.div> */}
- 
-       
-       
+
+
+
         {/* <Link
           href="/docs/components"
           className={cn(

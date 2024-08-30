@@ -1,3 +1,23 @@
+    {
+      title: "Charts",
+      items: [
+        {
+          title: "One",
+          href: "/docs/charts/one",
+          items: [],
+        },
+        {
+          title: "Two",
+          href: "/docs/charts/two",
+          items: [],
+        },
+        {
+          title: "Three",
+          href: "/docs/charts/three",
+          items: [],
+        },
+      ],
+    },
                 // drag={true}
                 // dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
                 // dragElastic={0.2}

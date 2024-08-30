@@ -136,27 +136,7 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Landing",
-      items: [
-        {
-          title: "One",
-          href: "/docs/landing/one",
-          items: [],
-        },
-        {
-          title: "Two",
-          href: "/docs/landing/two",
-          items: [],
-        },
-        {
-          title: "Three",
-          href: "/docs/landing/three",
-          items: [],
-        },
-      ],
-    },
-    {
-      title: "Text",
+      title: "Texts",
       items: [
         {
           title: "One",
@@ -176,7 +156,7 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Input",
+      title: "Inputs",
       items: [
         {
           title: "One",
@@ -196,7 +176,7 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Media",
+      title: "Medias",
       items: [
         {
           title: "One",
@@ -216,27 +196,27 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Charts",
+      title: "Landings",
       items: [
         {
           title: "One",
-          href: "/docs/charts/one",
+          href: "/docs/landing/one",
           items: [],
         },
         {
           title: "Two",
-          href: "/docs/charts/two",
+          href: "/docs/landing/two",
           items: [],
         },
         {
           title: "Three",
-          href: "/docs/charts/three",
+          href: "/docs/landing/three",
           items: [],
         },
       ],
     },
     {
-      title: "Admin",
+      title: "Admins",
       items: [
         {
           title: "One",
@@ -256,7 +236,7 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Visulization",
+      title: "Visulizations",
       items: [
         {
           title: "One",

@@ -20,113 +20,34 @@ import {
 } from "@/registry/default/ui/popover"
 import { Textarea } from "@/registry/default/ui/textarea"
 
-const ButtonContainer = () => {
-  const [isClicked, setIsClicked] = useState(false)
-  const [isNextClicked, setIsNextClicked] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  const containerVariants = {
-    initial: { height: 100 }, // Set initial height to 0
-    clicked: {
-      height: "auto",
-      transition: {
-        type: "spring",
-        stiffness: 200, // Adjust stiffness for bounce effect
-        damping: 10,
-      },
-    },
-  }
-
-  const backButtonVariants = {
-    initial: { display: "none" },
-    visible: { display: "block" },
-  }
-
-  const nextButtonVariants = {
-    initial: { marginLeft: 0, display: "block" },
-    visible: { marginLeft: "-200px", display: "none" },
-  }
-
-  return (
-    <motion.div
-      layout
-      className="my-10 flex h-auto w-[100px] items-center justify-center overflow-hidden rounded-md border p-3"
-      // ref={containerRef}
-      // variants={containerVariants}
-      // initial="initial"
-      // animate={isClicked ? "clicked" : "initial"}
-    >
-      <motion.button
-        layout
-        variants={nextButtonVariants}
-        className="w-full rounded-md bg-green-500 px-4 py-2 text-white"
-        initial="initial"
-        animate={isNextClicked ? "visible" : "initial"}
-        onClick={() => {
-          setIsNextClicked(!isNextClicked)
-          setIsClicked(!isClicked)
-        }}
-      >
-        Next
-      </motion.button>
-      <motion.button
-        layout
-        className="h-32 rounded-md bg-red-500 px-4 py-2 text-white "
-        variants={backButtonVariants}
-        initial="initial"
-        animate={isClicked ? "visible" : "initial"}
-        onClick={() => {
-          setIsClicked(!isClicked)
-          setIsNextClicked(!isNextClicked)
-        }}
-      >
-        Back
-      </motion.button>
-    </motion.div>
-  )
-}
-
 export default function IndexPage() {
   const [TWO_POPOVER_MARGIN_LEFT, setTWO_POPOVER_MARGIN_LEFT] = useState(0)
   const [TWO_POPOVER_DISPLAY, setTWO_POPOVER_DISPLAY] = useState(false)
 
   return (
     <div className="container relative flex max-w-[1200px] flex-col gap-4 py-4 md:flex-row md:py-8">
-      {/* <motion.div
-        drag={true}
-        dragConstraints={{ left: 0, right: 0, top:0, bottom:0 }}
-        dragElastic={0.2}
-        whileHover={{ scale: 1.2 }}
-        onHoverStart={(e: any) => {
-          alert("hover start")
-        }}
-        onHoverEnd={(e: any) => {}}
-        whileTap={{ scale: 0.9 }}
-        whileFocus={{ scale: 0.1 }}
-        whileDrag={{ scale: 0.5 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        className="flex h-10 items-center justify-center rounded-md border p-4"
-      >
-        Hello World!
-      </motion.div> */}
       <div className="flex flex-col gap-2 md:w-[300px]">
-        <h1 className="text-xl font-bold">Two-Step Popover</h1>
-        <span className="text-sm">
+        <h1 className="text-xl font-bold">TS Popover</h1>
+        <span className="text-sm text-muted-foreground">
           Experimenting how a two-step popover can be implemented and getting a
           feeling of the transition. Not quite there yet but hey, all of this is
           experimental.
         </span>
       </div>
-
-      {/* <ButtonContainer />
-      <AnimatedTabs />
-      <Slider /> */}
       <div className="flex min-h-[250px] w-full items-center justify-center rounded-md border sm:min-h-[500px] md:min-w-[350px]">
         <Popover>
           <PopoverTrigger asChild>
-            <span className="flex h-10 w-10 items-center justify-center rounded-md bg-primary-foreground">
-              <HardDrive className="h-4 w-4 text-muted-foreground hover:text-primary" />
-            </span>
+            <div className="group flex h-10 w-10 items-center justify-center rounded-md bg-primary-foreground">
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                whileFocus={{ scale: 0.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="flex h-full w-full items-center justify-center"
+              >
+                <HardDrive className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+              </motion.div>
+            </div>
           </PopoverTrigger>
           <PopoverContent className="flex w-[250px] space-x-2 overflow-hidden border-none bg-primary-foreground p-0">
             <div

@@ -1,4 +1,0 @@
-tasks:
-  - name: better
-    init: echo "Hello, master Sumon!"
-    command: npm install -g bun && bun install

@@ -1,0 +1,10 @@
+{
+  "name": "OKLCH",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2f1f4",
+  "icons": [
+    { "src": "/oklch-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/oklch-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

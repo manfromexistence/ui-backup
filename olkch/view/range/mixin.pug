@@ -1,0 +1,15 @@
+mixin range(type, max, step, defaultValue)
+  .range( class=`is-${type}` )
+    if type !== 'a'
+      canvas.range_space
+    input.range_input(
+      type="range"
+      min="0"
+      max=max
+      step=step / 100
+      aria-hidden="true"
+      value=defaultValue
+      tabindex="-1"
+      list=`range_${type}_values`
+    )
+    datalist( id=`range_${type}_values` )

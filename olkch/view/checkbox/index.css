@@ -1,0 +1,66 @@
+.checkbox {
+  position: relative;
+  display: block;
+}
+
+.checkbox_input {
+  @mixin visual-hidden;
+}
+
+.checkbox_control {
+  display: block;
+  padding: 12px 48px 12px 12px;
+  cursor: pointer;
+
+  .checkbox_input:focus + & {
+    border-radius: 20px;
+    outline: var(--accent) solid 3px;
+    outline-offset: 3px;
+  }
+
+  .checkbox_input:not(:focus-visible):focus + & {
+    outline: none;
+  }
+}
+
+.checkbox_icon {
+  position: absolute;
+  inset-inline-end: 4px;
+  top: 4px;
+  width: 56px;
+  height: 32px;
+  background: var(--surface-ui-regular);
+  border-radius: 16px;
+  transition: background 1500ms;
+}
+
+.checkbox_icon::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: var(--accent);
+  border-radius: 16px;
+  opacity: 0%;
+  transition: opacity 150ms;
+}
+
+.checkbox:has(.checkbox_input:checked) .checkbox_icon::before {
+  opacity: 100%;
+}
+
+.checkbox_icon::after {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 28px;
+  height: 28px;
+  content: "";
+  background: oklch(1 0 0);
+  border-radius: 50%;
+  transition: transform 150ms;
+  transform: translateX(0);
+}
+
+.checkbox:has(.checkbox_input:checked) .checkbox_icon::after {
+  transform: translateX(24px);
+}

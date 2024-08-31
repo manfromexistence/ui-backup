@@ -1,0 +1,26 @@
+.benchmark {
+  display: none;
+
+  &.is-enabled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: 200;
+    color: oklch(1 0 0);
+    background: var(--benchmark-color);
+  }
+}
+
+.benchmark_row + .benchmark_row {
+  padding-top: 4px;
+}
+
+.benchmark_value {
+  display: inline-block;
+  min-width: 37px;
+  font-weight: 400;
+  text-align: right;
+}

@@ -1,0 +1,34 @@
+.code {
+  position: relative;
+}
+
+.code + .code {
+  margin-top: 4px;
+}
+
+.code_link {
+  font-weight: bold;
+  color: currentcolor;
+}
+
+.code_note {
+  padding-left: 12px;
+  margin-top: 4px;
+  font-size: 10px;
+  line-height: 16px;
+  color: var(--text-secondary);
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.code_format {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: min(calc(var(--main-padding) - 4px), 40px);
+  height: 40px;
+  margin-left: 4px;
+  border-radius: var(--radius);
+}

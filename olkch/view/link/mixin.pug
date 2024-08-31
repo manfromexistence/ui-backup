@@ -1,0 +1,7 @@
+mixin link(icon, text, href)
+  a.link( class=`is-${icon}` target="_blank" href=href )
+    if icon === 'github'
+      include ./github.svg
+    else if icon === 'help'
+      include ./help.svg
+    = text

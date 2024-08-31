@@ -1,0 +1,98 @@
+body {
+  --chart-height: 150px;
+  --chart-l: 70%;
+  --chart-c: 20%;
+  --chart-h: 79%;
+}
+
+.chart {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  border: var(--unavailable-border);
+  border-width: 1px 0;
+
+  &.is-l,
+  &.is-h {
+    border-bottom-color: transparent;
+  }
+}
+
+.chart_line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 1px);
+  pointer-events: none;
+
+  &.is-l.is-x {
+    --chart-line-position: var(--chart-l);
+  }
+
+  &.is-l.is-y {
+    --chart-line-position: var(--chart-l);
+  }
+
+  &.is-c.is-x {
+    --chart-line-position: var(--chart-c);
+  }
+
+  &.is-h.is-y {
+    --chart-line-position: var(--chart-h);
+  }
+}
+
+.chart_line::after {
+  position: absolute;
+  z-index: 2;
+  content: "";
+  background: var(--surface-1);
+  mix-blend-mode: difference;
+  opacity: 40%;
+}
+
+.chart_line.is-x::after {
+  right: 0;
+  bottom: var(--chart-line-position);
+  left: 0;
+  height: 1px;
+}
+
+.chart_line.is-y::after {
+  top: 0;
+  bottom: 0;
+  left: var(--chart-line-position);
+  width: 1px;
+}
+
+.chart_label {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+  opacity: 50%;
+
+  .chart_line.is-x & {
+    bottom: calc(var(--chart-line-position) - 7px);
+    left: -15px;
+  }
+
+  .chart_line.is-y & {
+    top: 100%;
+    left: calc(var(--chart-line-position) - 7px);
+  }
+}
+
+.chart_canvas {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: var(--card-width);
+  height: var(--chart-height);
+  cursor: pointer;
+  image-rendering: crisp-edges;
+}

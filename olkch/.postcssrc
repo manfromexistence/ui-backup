@@ -1,0 +1,16 @@
+{
+  "plugins": {
+    "@csstools/postcss-oklab-function": {
+      "subFeatures": {
+        "displayP3": false
+      }
+    },
+    "postcss-opacity-percentage": {},
+    "postcss-mixins": {
+      "mixinsFiles": "view/**/mixins.pcss"
+    },
+    "postcss-nesting": {},
+    "postcss-media-minmax": {},
+    "autoprefixer": {}
+  }
+}

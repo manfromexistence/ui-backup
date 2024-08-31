@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Files to download",
+    "path": [
+      "dist/**/*",
+      "!dist/model-*.js",
+      "!dist/*.ico",
+      "!dist/*.webmanifest",
+      "!dist/*.png"
+    ],
+    "limit": "60 KB"
+  },
+  {
+    "name": "Base scripts to execute",
+    "path": ["dist/*.js", "!dist/model-*.js"],
+    "brotli": false,
+    "limit": "85 KB"
+  },
+  {
+    "name": "Scripts for 3D model",
+    "path": "dist/model-*.js",
+    "brotli": false,
+    "limit": "485 KB"
+  }
+]

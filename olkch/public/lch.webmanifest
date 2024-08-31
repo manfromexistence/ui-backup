@@ -1,0 +1,10 @@
+{
+  "name": "LCH",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2f1f4",
+  "icons": [
+    { "src": "/lch-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/lch-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

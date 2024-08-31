@@ -1,0 +1,11 @@
+nav.mode( aria-label="Mode" )
+  a.mode_link(
+    class=!LCH ? 'is-current' : ''
+    aria-current=!LCH ? 'page' : false
+    href="https://oklch.com/"
+  ) OKLCH
+  a.mode_link(
+    class=LCH ? 'is-current' : ''
+    aria-current=LCH ? 'is-current' : false
+    href="https://lch.oklch.com/"
+  ) LCH

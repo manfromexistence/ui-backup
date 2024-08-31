@@ -1,0 +1,73 @@
+include ../range/mixin.pug
+
+mixin card(type)
+  section.card( class=`is-${type}` )
+
+    if type === 'l'
+      h2.card_title Lightness
+      .card_number
+        +field('L', 'l', {
+          type: 'text',
+          role: 'spinbutton',
+          'aria-valuemin': 0,
+          'aria-valuemax': 100,
+          pattern: '^[0-9+\\/*.\\-]+$',
+          inputmode: 'decimal',
+          step: L_STEP
+        })
+      .card_chart
+        .card_size
+          +chart('h', 'c', 'l')
+      +range('l', 100, L_STEP, 70)
+
+    else if type === 'c'
+      h2.card_title Chroma
+      .card_number
+        +field('C', 'c', {
+          type: 'text',
+          role: 'spinbutton',
+          pattern: '^[0-9+\\/*.\\-]+$',
+          'aria-valuemin': 0,
+          inputmode: 'decimal',
+          step: C_STEP
+        })
+      .card_chart
+        .card_size
+          +chart('l', 'c', 'h')
+      +range('c', C_MAX, C_STEP, LCH ? 39 : 0.1)
+
+    else if type === 'h'
+      h2.card_title Hue
+      .card_number
+        +field('H', 'h', {
+          type: 'text',
+          role: 'spinbutton',
+          pattern: '^[0-9+\\/*.\\-]+$',
+          'aria-valuemin': 0,
+          'aria-valuemax': H_MAX,
+          inputmode: 'decimal',
+          step: H_STEP
+        })
+      .card_chart
+        .card_size
+          +chart('c', 'l', 'h')
+      +range('h', H_MAX, H_STEP, 286)
+
+    else if type === 'a'
+      h2.card_title Alpha
+      .card_number
+        +field('Alpha', 'a', {
+          type: 'text',
+          role: 'spinbutton',
+          pattern: '^[0-9+\\/*.\\-]+$',
+          'aria-valuemin': 0,
+          'aria-valuemax': ALPHA_MAX,
+          value: ALPHA_MAX,
+          step: ALPHA_STEP,
+          inputmode: 'decimal'
+        })
+      +range('a', ALPHA_MAX, ALPHA_STEP, 100)
+
+    else if type === '3d'
+      h2.card_title 3D
+      include ../minimodel/index.pug

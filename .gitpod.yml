@@ -1,0 +1,4 @@
+tasks:
+  - name: ui
+    init: echo "Hello, to manfromexitence/ui"
+    command: echo "Thanks for checking this codebase!"

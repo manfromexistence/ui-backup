@@ -1,7 +1,5 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="bg-primary h-full w-full">Hello</div>
+    <div className="bg-primary text-primary-foreground min-h-screen w-full">Hello</div>
   );
 }

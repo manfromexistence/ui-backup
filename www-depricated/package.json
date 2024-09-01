@@ -16,6 +16,7 @@
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
+  
   "dependencies": {
     "tailwindcss": "3.3.7",
 

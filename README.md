@@ -28,6 +28,11 @@
 }
 ```
 ```
+    "@tailwindcss/postcss": "^4.0.0-alpha.15",
+    "tailwindcss": "4.0.0-alpha.3",
+
+```
+```
 const { fontFamily } = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */

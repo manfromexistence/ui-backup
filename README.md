@@ -156,6 +156,7 @@ module.exports = {
 ```
 bunx create-next-app@rc --turbo
 ls -l | grep -v "^\." | grep "^d" | wc -l
+rm -rf .contentlayer .next node_modules
 git add . && git commit -m "feat: automated commit by manfromexistence" && git push
 ```
 

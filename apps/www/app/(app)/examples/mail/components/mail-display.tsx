@@ -42,7 +42,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/registry/new-york/ui/tooltip"
-import { Mail } from "@/app/(app)/examples/mail/data"
+import { Mail } from "../data"
 
 interface MailDisplayProps {
   mail: Mail | null

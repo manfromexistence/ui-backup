@@ -4,7 +4,7 @@ import { ChartsNav } from "@/components/charts-nav"
 import { ThemesSwitcher } from "@/components/themes-selector"
 import { ThemesStyle } from "@/components/themes-styles"
 import { Separator } from "@/registry/new-york/ui/separator"
-import * as Charts from "./charts"
+import * as Charts from "@/app/(app)/charts/charts"
 
 export default function ChartsPage() {
   return (

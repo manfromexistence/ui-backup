@@ -12,8 +12,8 @@ import { codeImport } from "remark-code-import"
 import remarkGfm from "remark-gfm"
 import { visit } from "unist-util-visit"
 
-import { rehypeComponent } from "./shadcn/lib/rehype-component"
-import { rehypeNpmCommand } from "./shadcn/lib/rehype-npm-command"
+import { rehypeComponent } from "./lib/rehype-component"
+import { rehypeNpmCommand } from "./lib/rehype-npm-command"
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {

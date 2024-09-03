@@ -7,6 +7,8 @@ git add . && git commit -m "feat: automated commit by manfromexistence" && git p
 ```
 
 # Shadcn WWW
+A slight change needed to make shadcn/ui website for more flexibility
+
 ## tailwind.config.cjs
 ```
 const { fontFamily } = require("tailwindcss/defaultTheme")
@@ -100,7 +102,99 @@ module.exports = {
 ```
 ## postcss.config.cjs
 ```
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+## tsconfig.json
+```
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "strict": true,
 
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+
+    "noEmit": true,
+    "incremental": true,
+
+    "module": "esnext",
+    "resolveJsonModule": true,
+
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".contentlayer/generated"
+  ],
+  "exclude": ["node_modules", "./scripts/build-registry.mts", "__registry__"]
+}
+```
+## .eslintrc.json
+```
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "root": true,
+  "extends": [
+    "next/core-web-vitals",
+    "turbo",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["tailwindcss"],
+  "ignorePatterns": ["**/fixtures/**"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/classnames-order": "error"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn", "cva"],
+      "config": "tailwind.config.cjs"
+    },
+    "next": {
+      "rootDir": ["apps/*/"]
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser"
+    }
+  ]
+}
 ```
 
 <!-- 

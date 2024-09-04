@@ -1,4 +1,4 @@
 tasks:
   - name: ui
     init: echo "Hello, to manfromexitence/ui"
-    command: npm install -g npm@10.8.3 && npm install -g bun && echo "Thanks for checking this codebase!"
+    command: npm install -g npm@10.8.3 && npm install -g bun && cd www && bun install && bun run dev && echo "Thanks for checking this codebase!"

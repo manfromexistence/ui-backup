@@ -1,4 +1,4 @@
-### Better Commands that I better remember
+### Better Commands that is better remember
 ```
 bunx create-next-app@rc --turbo
 ls -l | grep -v "^\." | grep "^d" | wc -l
